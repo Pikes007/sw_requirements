@@ -16,7 +16,7 @@ def api_session():
 @pytest.fixture(scope="function")
 def setup(request, api_session):
     options = webdriver.ChromeOptions()
-    options.add_experimental_option("detach", True)
+    options.add_argument("--headless")
     driver = None
     if "web" in request.keywords:
         driver = webdriver.Chrome(options=options)
